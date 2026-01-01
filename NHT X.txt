@@ -1,7 +1,5 @@
 
--- This file was deobfuscated using Scene Deobfuscator discord.gg/deobfuscate :D
-
-hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Death), function()
+hookfunction(require(game:GetService"ReplicatedStorage").Effect.Container.Death), function()
     -- empty block
 end)
 hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Respawn), function()
@@ -3727,19 +3725,19 @@ vu618.MouseButton1Click:Connect(function()
         vu616:Minimize(true)
     end
 end)
-local v484 = v466:MakeTab({"Info", "info"})
-local v485 = v466:MakeTab({"Farming", "home"})
-local v496 = v466:MakeTab({"Settings", "settings"})
-local v495 = v466:MakeTab({"Shop", "shoppingCart"})
-local v487 = v466:MakeTab({"Quest | Items", "swords"})
-local v486 = v466:MakeTab({"Auto Fishing", "rbxassetid://127664059821666"})
-local v490 = v466:MakeTab({"Race V4", "crown"})
-local v488 = v466:MakeTab({"Volcano Dojo", "cake"})
-local v489 = v466:MakeTab({"Sea Event", "waves"})
-local v491 = v466:MakeTab({"Raid Fruits", "cherry"})
-local v492 = v466:MakeTab({"Fruits | Check Stock", "apple"})
-local v493 = v466:MakeTab({"Teleport", "locate"})
-local v494 = v466:MakeTab({"PvP,Player", "user"})
+local v484 = v466:MakeTab({"Tab Info", "info"})
+local v495 = v466:MakeTab({"Tab Shop", "shoppingCart"})
+local v496 = v466:MakeTab({"Tab Settings", "settings"})
+local v485 = v466:MakeTab({"Tab Farming Other", "home"})
+local v487 = v466:MakeTab({"Tab Quest", "swords"})
+local v491 = v466:MakeTab({"Tab Raid Fruits", "cherry"})
+local v492 = v466:MakeTab({"Tab Fruits | Check Stock", "apple"})
+local v486 = v466:MakeTab({"Tab Auto Fishing", "rbxassetid://127664059821666"})
+local v490 = v466:MakeTab({"Tab Race V4"})
+local v488 = v466:MakeTab({"Tab Volcano Dojo", "cake"})
+local v489 = v466:MakeTab({"Tab Sea Event", "waves"})
+local v493 = v466:MakeTab({"Tab Teleport", "locate"})
+local v494 = v466:MakeTab({"Tab PvP", "user"})
 v484:AddDiscordInvite({
     Name = "Tham Gia Discord",
     Description = "Link Sever Discord",
@@ -3796,7 +3794,7 @@ local _ = v485:AddDropdown({
 local _ = v485:AddSection({"Main Farm"})
 v485:AddToggle({
     Name = "Auto Farm Level 1-2650",
-    Description = "T\225\187\177 \196\145\225\187\153ng farm c\225\186\165p",
+    Description = "",
     Default = false,
     Callback = function(v509)
         _G.AutoFarm = v509
@@ -3902,7 +3900,7 @@ spawn(function()
     end
 end)
 v485:AddToggle({
-    Title = "Farm Level New 2650 - 2750",
+    Title = "Farm Level New 2650 - 2800",
     Description = "C\195\160y C\225\186\165p \225\187\158 \196\144\225\186\163o M\225\187\155i",
     Value = false,
     Callback = function(v515)
@@ -3991,7 +3989,7 @@ spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Auto Kill Near | Mob Aura",
+    Name = "Auto Kill Near",
     Description = "\196\144\195\161nh Qu\195\161i G\225\186\167n",
     Default = false,
     Callback = function(v520)
@@ -4026,77 +4024,7 @@ spawn(function()
         end
     end
 end)
-local _ = v485:AddSection({"Farm Summer Token New"})
-v485:AddToggle({
-    Name = "Auto Farm Summer Token",
-    Description = "T\225\187\177 \196\144\225\187\153ng Di Chuy\225\187\131n \196\144\225\186\191n V\225\187\139 Tr\195\173 Summer Token Theo Sea V\195\160 Farm Qu\195\161i [Electrified]",
-    Default = false,
-    Callback = function(v524)
-        _G.FarmSummer = v524
-        StopTween(_G.FarmSummer)
-    end
-})
-local function v527(v525)
-    pcall(function()
-        if type(topos) ~= "function" then
-            local l_LocalPlayer_5 = game:GetService("Players").LocalPlayer
-            if l_LocalPlayer_5 and l_LocalPlayer_5.Character and l_LocalPlayer_5.Character:FindFirstChild("HumanoidRootPart") then
-                l_LocalPlayer_5.Character.HumanoidRootPart.CFrame = v525
-            end
-        else
-            topos(v525)
-        end
-    end)
-end
-local function v530()
-    local _ = game:GetService("Players").LocalPlayer
-    local l_PlaceId_2 = game.PlaceId
-    if l_PlaceId_2 ~= 2753915549 then
-        if l_PlaceId_2 ~= 4442272183 then
-            if l_PlaceId_2 == 7449423635 then
-                return CFrame.new(-10334.821, 390.837, -8572.301)
-            else
-                return nil
-            end
-        else
-            return CFrame.new(-5246.478, 66.381, -6015.48)
-        end
-    else
-        return CFrame.new(924.405, 6.366, 4476.727)
-    end
-end
-spawn(function()
-    while task.wait() do
-        if _G.FarmSummer then
-            pcall(function()
-                local v531 = v530()
-                if v531 then
-                    v527(v531 + Vector3.new(0, 50, 0))
-                    for _, v533 in pairs(game.Workspace.Enemies:GetChildren()) do
-                        local l_Humanoid_0 = v533:FindFirstChild("Humanoid")
-                        local l_HumanoidRootPart_4 = v533:FindFirstChild("HumanoidRootPart")
-                        if l_Humanoid_0 and l_HumanoidRootPart_4 and l_Humanoid_0.Health > 0 and l_Humanoid_0.DisplayName:find("%[Electrified%]") then
-                            repeat
-                                task.wait()
-                                AutoHaki()
-                                EquipWeapon(_G.SelectWeapon)
-                                l_HumanoidRootPart_4.CanCollide = false
-                                l_Humanoid_0.WalkSpeed = 0
-                                if v533:FindFirstChild("Head") then
-                                    v533.Head.CanCollide = false
-                                end
-                                v527(l_HumanoidRootPart_4.CFrame * CFrame.new(0, 30, 0))
-                                game:GetService("VirtualUser"):CaptureController()
-                                game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
-                            until not _G.FarmSummer or not v533.Parent or l_Humanoid_0.Health <= 0
-                        end
-                    end
-                end
-            end)
-        end
-    end
-end)
-local _ = v485:AddSection({"Event Boss Pain New"})
+local _ = v485:AddSection({"Event Farm Boss Kẹo"})
 local v537 = {}
 if World1 then
     v537 = {
@@ -4153,7 +4081,7 @@ v485:AddDropdown({
     end
 })
 v485:AddToggle({
-    Name = "Farm Boss Pain",
+    Name = "Farm Boss kẹo",
     Description = "Farm Boss \196\144\195\163 Ch\225\187\141n",
     Default = false,
     Callback = function(v539)
@@ -5232,7 +5160,7 @@ task.spawn(function()
         end
     end
 end)
-local _ = v486:AddSection({"Auto Fishing |  T\225\187\177 \196\144\225\187\153ng C\195\162u C\195\161"})
+local _ = v486:AddSection({"Auto Fishing "})
 v486:AddToggle({
     Title = "Auto Fishing",
     Description = "T\225\187\177 \196\144\225\187\153ng C\195\162u C\195\161 Xo\195\161 Hi\225\187\135u \225\187\168ng Khi C\195\162u",
